@@ -16,6 +16,12 @@ class PyCirqCore(PythonPackage):
 
     # pip build from wheel recommended on github repo
     version(
+        "1.1.0",
+        sha256="921c7e334d7b07ee84d2bbd259f46c0495661947314b517e57e81ffc3efd6119",
+        expand=False,
+        url = "https://files.pythonhosted.org/packages/66/22/dc371eadf22596f29742c2b21195a06fcc217b214a733f0f55aa0649df37/cirq_core-1.1.0-py3-none-any.whl",
+    )
+    version(
         "0.13.1",
         sha256="31f88210f00b43c6d10c83c0e2e5291c6e4a1750f436dcb8044b3343c6bd73b9",
         expand=False,
@@ -28,7 +34,7 @@ class PyCirqCore(PythonPackage):
     depends_on("py-duet@0.2.0:0.2", type="run")
     depends_on("py-matplotlib@3.0:3", type="run")
     depends_on("py-networkx@2.4:2", type="run")
-    depends_on("py-numpy@1.16:1", type="run")
+    depends_on("py-numpy@1.16:1.23", type="run")
     depends_on("py-pandas", type="run")
     depends_on("py-sortedcontainers@2.0:2", "run")
     depends_on("py-scipy", type="run")

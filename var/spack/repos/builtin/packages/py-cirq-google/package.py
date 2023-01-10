@@ -16,6 +16,12 @@ class PyCirqGoogle(PythonPackage):
 
     # pip build from wheel recommended on github repo
     version(
+        "1.1.0",
+        sha256="4ddab3e274df78a5c816d1aebbd96248c187ef04a44d3499799d51fb3a85981f",
+        expand=False,
+        url = "https://files.pythonhosted.org/packages/30/d2/4355681fd75b5df9c9ab492beb44c624c897232da0a1cb0c7c1b6e0d85c3/cirq_google-1.1.0-py3-none-any.whl",
+    )
+    version(
         "0.13.1",
         sha256="4319fade78e7ecb3fc846a82d426d14426079df3b219d82325e70e34b564af98",
         expand=False,
@@ -26,4 +32,5 @@ class PyCirqGoogle(PythonPackage):
     depends_on("py-setuptools", type="build")
 
     depends_on("py-google-api-core@1.14.0:1+grpc", type="run")
-    depends_on("py-protobuf@3.13.0:", type="run")
+    depends_on("py-protobuf@3.13.0:3", type="run")
+    depends_on("py-proto-plus@1.20.0:", when="@0.15.0:", type="run")
