@@ -19,6 +19,8 @@ class PyGoogleApiCore(PythonPackage):
     version("1.21.0", sha256="fea9a434068406ddabe2704988d24d6c5bde3ecfc40823a34f43892d017b14f6")
     version("1.14.2", sha256="2c23fbc81c76b941ffb71301bb975ed66a610e9b03f918feacd1ed59cf43a6ec")
 
+    variant("grpc", default=False, description="enable grpc support")
+
     depends_on("python@2.7:2.8,3.4:", type=("build", "run"))
     depends_on("py-googleapis-common-protos@1.6:1", type=("build", "run"))
     depends_on("py-protobuf@3.4.0:", type=("build", "run"))
@@ -27,3 +29,5 @@ class PyGoogleApiCore(PythonPackage):
     depends_on("py-setuptools@34.0.0:", type=("build", "run"))
     depends_on("py-six@1.10.0:", type=("build", "run"))
     depends_on("py-pytz", type=("build", "run"))
+
+    depends_on("py-grpcio@1.8.2:1", when="+grpc", type=("build", "run"))
