@@ -33,5 +33,5 @@ class PyCirqCore(PythonPackage):
     depends_on("py-sortedcontainers@2.0:2", "run")
     depends_on("py-scipy", type="run")
     depends_on("py-sympy", type="run")
-    depends_on("py-typing_extensions", type="run")
+    depends_on("py-typing-extensions", type="run")
     depends_on("py-tqdm", type="run")
