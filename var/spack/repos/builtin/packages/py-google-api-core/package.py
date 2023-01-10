@@ -16,6 +16,7 @@ class PyGoogleApiCore(PythonPackage):
     # Leave them out of 'import_modules' to avoid optional dependency.
     import_modules = ["google.api_core", "google.api_core.future"]
 
+    version("1.21.0", sha256="fea9a434068406ddabe2704988d24d6c5bde3ecfc40823a34f43892d017b14f6")
     version("1.14.2", sha256="2c23fbc81c76b941ffb71301bb975ed66a610e9b03f918feacd1ed59cf43a6ec")
 
     depends_on("python@2.7:2.8,3.4:", type=("build", "run"))
