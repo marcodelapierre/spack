@@ -67,6 +67,10 @@ class PyTensorflowQuantum(PythonPackage):
     depends_on("python@3.7", when="@0.7.2-py3.7", type=("build", "run"))
     depends_on("py-setuptools", type="build")
 
+    # this one builds, but then py-tensorflow-quantum examples fail at runtime,
+    # due to symbols not found (possibly an ABI issue)
+    # depends_on("py-tensorflow@2.7.0", type=("build", "run"))
+    # this one is from the tensorflow docs, however build currently fails
     depends_on("py-tensorflow@2.7.0+gxx_old_abi", type=("build", "run"))
 
     depends_on("py-cirq-core@0.13.1", type=("build", "run"))
