@@ -1027,7 +1027,7 @@ def protobuf_deps():
             args.append("--config=v2")
 
         if spec.satisfies("+gxx_old_abi"):
-            args.append("--cxxopt=\"-D_GLIBCXX_USE_CXX11_ABI=0\"")
+            args.append("--cxxopt=-D_GLIBCXX_USE_CXX11_ABI=0")
 
         args.append("//tensorflow/tools/pip_package:build_pip_package")
 
