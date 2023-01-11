@@ -145,6 +145,10 @@ class PyTensorflow(Package, CudaPackage, ROCmPackage):
     variant(
         "dynamic_kernels", default=False, description="Build kernels into separate shared objects"
     )
+    variant(
+        "gxx_old_abi", default=False, when="%gcc",
+        description="Build using the old ABI of the G++ compiler",
+    )
 
     extends("python")
     depends_on("python@3:", type=("build", "run"), when="@2.1:")
@@ -1021,6 +1025,10 @@ def protobuf_deps():
 
         if spec.satisfies("@2:"):
             args.append("--config=v2")
+
+        if spec.satisfies("+gxx_old_abi"):
+            args.append("-c opt")
+            args.append("--cxxopt="-D_GLIBCXX_USE_CXX11_ABI=0"")
 
         args.append("//tensorflow/tools/pip_package:build_pip_package")
 
